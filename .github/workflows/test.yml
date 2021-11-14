@@ -1,0 +1,14 @@
+name: Testing
+
+on:
+  schedule:
+    - cron:  '0 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: wouldnt/tor-list-action
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
