@@ -1,0 +1,23 @@
+name: "update-tor-exits"
+description: "Update a file through the github api"
+inputs:
+  token:
+    description: "Github token for Auth"
+    required: true
+    default: "${{ secrets.GITHUB_TOKEN }}"
+  committer_name:
+    description: "Name of the committer"
+    required: true
+  committer_email:
+    description: "Email of the committer"
+    required: true
+  branch:
+    description: "The name of the branch"
+    required: false
+    default: "main"
+outputs:
+  sha:
+    description: "SHA Hash of the updated file"
+runs:
+  using: "node12"
+  main: "index.js"

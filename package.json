@@ -1,0 +1,12 @@
+{
+  "name": "tor-list-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wouldnt/tor-list-action.git",
+  "author": "Wouldnt <Seychellois@pm.me>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}
