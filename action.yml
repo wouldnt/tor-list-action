@@ -17,6 +17,9 @@ inputs:
     description: "The name of the branch"
     required: false
     default: "main"
+  file:
+    description: "The name of the file"
+    required: true
 
 outputs:
   sha:

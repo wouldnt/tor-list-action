@@ -1,27 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2833:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const fs = __nccwpck_require__(5747);
-
-function getFileContentsAsString(fileName) {
-  return fs.readFileSync(fileName, { encoding: "utf-8" });
-}
-
-function fileContentsToBase64(contents) {
-  return Buffer.from(contents).toString("base64");
-}
-
-module.exports = {
-  getFileContentsAsString,
-  fileContentsToBase64,
-};
-
-
-/***/ }),
-
 /***/ 7351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -8294,6 +8273,39 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+/***/ 1252:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const fs = __nccwpck_require__(5747);
+
+function getFileContentsAsString(fileName) {
+  return fs.readFileSync(fileName, { encoding: "utf-8" });
+}
+
+function fileContentsToBase64(contents) {
+  return Buffer.from(contents).toString("base64");
+}
+
+async function getExitNodes() {
+  return fetch("https://check.torproject.org/exit-addresses")
+    .then((response) => response.text())
+    .then((text) => text.split("\n").filter(Boolean))
+    .then((lines) => lines.map((line) => line.split(" ")[0]))
+    .catch((error) => {
+      console.log(error);
+      process.exit(1)
+    });
+}
+
+module.exports = {
+  getFileContentsAsString,
+  fileContentsToBase64,
+  getExitNodes,
+};
+
+
+/***/ }),
+
 /***/ 2877:
 /***/ ((module) => {
 
@@ -8465,7 +8477,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-const fileHelpers = __nccwpck_require__(2833);
+const fileHelpers = __nccwpck_require__(1252);
 
 async function executeAction() {
   try {
@@ -8477,7 +8489,7 @@ async function executeAction() {
 
     // Prepare file
     const fileContents = fileHelpers.getFileContentsAsString(file);
-    const encodedContents = fileHelpers.fileContentsToBase64("hello world");
+    const encodedContents = fileHelpers.fileContentsToBase64(JSON.stringify(getExitNodes()));
 
     // Prepare API
     const octokit = github.getOctokit(core.getInput("token"));

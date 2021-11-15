@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-const fileHelpers = require("./fileUtils.js");
+const fileHelpers = require("./utils.js");
 
 async function executeAction() {
   try {
@@ -12,7 +12,7 @@ async function executeAction() {
 
     // Prepare file
     const fileContents = fileHelpers.getFileContentsAsString(file);
-    const encodedContents = fileHelpers.fileContentsToBase64("hello world");
+    const encodedContents = fileHelpers.fileContentsToBase64(JSON.stringify(getExitNodes()));
 
     // Prepare API
     const octokit = github.getOctokit(core.getInput("token"));
