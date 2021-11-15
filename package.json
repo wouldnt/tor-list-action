@@ -2,11 +2,16 @@
   "name": "tor-list-action",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts":{
+    "build": "ncc build index.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "git@github.com:wouldnt/tor-list-action.git",
   "author": "Wouldnt <Seychellois@pm.me>",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.31.1"
   }
 }

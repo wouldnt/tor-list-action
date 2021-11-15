@@ -1,5 +1,7 @@
 name: "update-tor-exits"
 description: "Update a file through the github api"
+author: "Wouldnt"
+
 inputs:
   token:
     description: "Github token for Auth"
@@ -15,9 +17,11 @@ inputs:
     description: "The name of the branch"
     required: false
     default: "main"
+
 outputs:
   sha:
     description: "SHA Hash of the updated file"
+
 runs:
   using: "node12"
-  main: "index.js"
+  main: "dist/index.js"
