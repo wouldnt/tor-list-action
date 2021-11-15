@@ -14,6 +14,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: "master"
+          file: "testing123.txt"
           committer_name: ${{ secrets.COMMITTER_NAME }}
           committer_email: ${{ secrets.COMMITTER_EMAIL }}
           
