@@ -8488,7 +8488,7 @@ async function executeAction() {
 
     const contents = await octokit.rest.repos.getContent({
       owner,
-      path,
+      path: file,
       repo,
       branch,
     });
