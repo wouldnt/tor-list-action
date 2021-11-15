@@ -1,6 +1,6 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-const fileHelpers = require("./fileHelpers.js");
+const fileHelpers = require("./fileUtils.js");
 
 async function executeAction() {
   try {
