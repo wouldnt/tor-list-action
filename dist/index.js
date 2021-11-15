@@ -1,6 +1,27 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 2833:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const fs = __nccwpck_require__(5747);
+
+function getFileContentsAsString(fileName) {
+  return fs.readFileSync(fileName, { encoding: "utf-8" });
+}
+
+function fileContentsToBase64(contents) {
+  return Buffer.from(contents).toString("base64");
+}
+
+module.exports = {
+  getFileContentsAsString,
+  fileContentsToBase64,
+};
+
+
+/***/ }),
+
 /***/ 7351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -8273,14 +8294,6 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 137:
-/***/ ((module) => {
-
-module.exports = eval("require")("./fileHelpers.js");
-
-
-/***/ }),
-
 /***/ 2877:
 /***/ ((module) => {
 
@@ -8452,7 +8465,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-const fileHelpers = __nccwpck_require__(137);
+const fileHelpers = __nccwpck_require__(2833);
 
 async function executeAction() {
   try {
