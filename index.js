@@ -21,7 +21,7 @@ async function executeAction() {
 
     // Update file
 
-    const contents = await octokit.repos.getContents({
+    const contents = await octokit.rest.repos.getContent({
       owner,
       path,
       repo,
