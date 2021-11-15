@@ -30,10 +30,6 @@ async function executeAction() {
 
     const commitObj = {
       message: message,
-      committer: {
-        name: committerName,
-        email: committerEmail,
-      },
       content: encodedContents,
       owner: owner,
       repo: repo,
