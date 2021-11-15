@@ -20,8 +20,4 @@ async function getExitNodes() {
     });
 }
 
-module.exports = {
-  getFileContentsAsString,
-  fileContentsToBase64,
-  getExitNodes,
-};
+export { getFileContentsAsString, fileContentsToBase64, getExitNodes };
