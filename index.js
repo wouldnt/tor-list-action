@@ -43,7 +43,7 @@ async function executeAction() {
 
     core.debug(JSON.stringify(commitObj));
 
-    const updateResult = await octokit.repos.createOrUpdateFile(commitObj);
+    const updateResult = await octokit.rest.repos.createOrUpdateFileContents(commitObj);
     core.setOutput("sha", updateResult.data.commit.sha);
   } catch (error) {
     core.setFailed(error.message);
