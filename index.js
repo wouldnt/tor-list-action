@@ -11,8 +11,8 @@ async function executeAction() {
     const committerEmail = core.getInput("commiter_email");
 
     // Prepare file
-    const fileContents = fileHelpers.getFileContentsAsString(file);
-    const encodedContents = fileHelpers.fileContentsToBase64(JSON.stringify(getExitNodes()));
+    const fileContents = getFileContentsAsString(file);
+    const encodedContents = fileContentsToBase64(JSON.stringify(getExitNodes()));
 
     // Prepare API
     const octokit = github.getOctokit(core.getInput("token"));
