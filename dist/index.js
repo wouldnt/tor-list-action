@@ -8299,7 +8299,7 @@ function fileContentsToBase64(contents) {
 }
 
 async function getExitNodes() {
-  return node_fetch__WEBPACK_IMPORTED_MODULE_1___default()("https://check.torproject.org/exit-addresses")
+  return node_fetch__WEBPACK_IMPORTED_MODULE_1___default()("https://check.torproject.org/torbulkexitlist")
     .then((response) => response.text())
     .then((text) => text.split("\n").filter(Boolean))
     .then((lines) => lines.map((line) => line.split(" ")[0]))
