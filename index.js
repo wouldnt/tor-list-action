@@ -15,7 +15,7 @@ async function executeAction() {
     const encodedContents = fileHelpers.fileContentsToBase64("hello world");
 
     // Prepare API
-    const octokit = new github.GitHub(core.getInput("token"));
+    const octokit = github.getOctokit(core.getInput("token"));
     const owner = github.context.repo.owner;
     const repo = github.context.repo.repo;
 
