@@ -4,7 +4,7 @@ inputs:
   token:
     description: "Github token for Auth"
     required: true
-    default: "${{ secrets.GITHUB_TOKEN }}"
+    default: ${{ github.token }}
   committer_name:
     description: "Name of the committer"
     required: true
