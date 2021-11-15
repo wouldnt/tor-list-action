@@ -12,7 +12,7 @@ async function executeAction() {
 
     // Prepare file
     const fileContents = getFileContentsAsString(file);
-    const encodedContents = fileContentsToBase64(JSON.stringify(getExitNodes()));
+    const encodedContents = fileContentsToBase64(JSON.stringify(await getExitNodes()));
 
     // Prepare API
     const octokit = github.getOctokit(core.getInput("token"));
