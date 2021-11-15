@@ -7,8 +7,6 @@ async function executeAction() {
     const file = core.getInput("file");
     const branch = core.getInput("branch");
     const message = "Updated Exit Nodes";
-    const committerName = core.getInput("commiter_name");
-    const committerEmail = core.getInput("commiter_email");
 
     // Prepare file
     const fileContents = getFileContentsAsString(file);

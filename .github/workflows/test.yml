@@ -1,8 +1,8 @@
-name: Testing
+name: Update Exit Nodes
 
 on:
-  schedule:
-    - cron:  '0 * * * *'
+  #schedule:
+  #  - cron:  '0 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: "master"
-          file: "testing123.txt"
-          committer_name: ${{ secrets.COMMITTER_NAME }}
-          committer_email: ${{ secrets.COMMITTER_EMAIL }}
-          
+          file: "data/exit-nodes.json"

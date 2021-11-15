@@ -8530,9 +8530,7 @@ async function executeAction() {
   try {
     const file = core.getInput("file");
     const branch = core.getInput("branch");
-    const message = "Updated Tor Exit nodes";
-    const committerName = core.getInput("commiter_name");
-    const committerEmail = core.getInput("commiter_email");
+    const message = "Updated Exit Nodes";
 
     // Prepare file
     const fileContents = getFileContentsAsString(file);
