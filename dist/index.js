@@ -8524,7 +8524,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-const {fileHelpers, getExitNodes} = __nccwpck_require__(1252);
+const {getFileContentsAsString, fileContentsToBase64, getExitNodes} = __nccwpck_require__(1252);
 
 async function executeAction() {
   try {
