@@ -13,3 +13,7 @@ jobs:
       - uses: wouldnt/tor-list-action@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "master"
+          committer_name: ${{ secrets.COMMITTER_NAME }}
+          committer_email: ${{ secrets.COMMITTER_EMAIL }}
+          
